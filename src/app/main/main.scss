@@ -1,10 +1,6 @@
 .emoji-picker {
   display: inline-block;
-  height: 22px;
-  margin-right: .5em;
-  width: 22px;
   cursor: pointer;
-  border: 1px solid;
 
   &__container {
 
@@ -57,6 +53,15 @@
 
     &.right .arrow {
       border-right-color: #e4dede
+    }
+    &.left .arrow {
+      border-left-color: #e4dede
+    }
+    &.top .arrow {
+      border-top-color: #e4dede
+    }
+    &.bottom .arrow {
+      border-bottom-color: #e4dede
     }
 
     .popover-title {

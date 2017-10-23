@@ -1,7 +1,8 @@
 export const emojiPickerComponent = {
   template: `
-     <i class="emoji-picker fa fa-smile-o"
+     <i class="emoji-picker"
        uib-popover-template="'app/templates/emoji-popover.html'"
+       popover-is-open="$picker.open"
        popover-placement="{{ !$picker.placement && 'left' || $picker.placement }}"
        popover-title="{{ ::$picker.title }}"><ng-transclude></ng-transclude></i>
   `,
@@ -10,6 +11,7 @@ export const emojiPickerComponent = {
   },
   transclude: true,
   bindings: {
+    open: '<',
     placement: '@',
     title: '@',
     onChangeFunc: '&'
