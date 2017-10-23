@@ -8,7 +8,7 @@ export function imagifyFilter(EmojiPages) {
 
     return input.replace(regex, (match, text) => {
       let className = text.replace(/_/g, '-');
-      return `<img class="emoji emoji-${className}">`;
+      return `<img class="emoji emoji-${className}" title=":${className}:" alt="${className}">`;
     })
   };
 }
