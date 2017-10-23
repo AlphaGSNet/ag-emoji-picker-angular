@@ -1,0 +1,208 @@
+.emoji-picker {
+  display: inline-block;
+  height: 22px;
+  margin-right: .5em;
+  width: 22px;
+  cursor: pointer;
+  border: 1px solid;
+
+  &__container {
+
+  }
+
+  &__icons {
+    .emoji {
+      margin: 10px;
+      cursor: pointer;
+    }
+  }
+
+  &__pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+
+    &--item {
+      display: inline-block;
+      position: relative;
+      height: 10px;
+      width: 10px;
+      cursor: pointer;
+
+      &:after{
+        content: '';
+        height:5px;
+        width: 5px;
+        position: absolute;
+        top:2px;
+        left: 2px;
+        background-color: #D8D8D8;
+        border-radius: 100%;
+      }
+
+      &.active{
+        &:after{
+          background-color: #1CBCB4;
+        }
+      }
+    }
+  }
+
+  & + .popover {
+    border: 1px solid #EDEDED;
+    box-shadow: none;
+    max-width: 430px;
+    width: 368px;
+
+    &.right .arrow {
+      border-right-color: #e4dede
+    }
+
+    .popover-title {
+      display: none;
+    }
+  }
+}
+
+.emoji {
+  display: inline-block;
+  background: url($sprite_path) no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+  width: 22px; height: 22px;
+
+  @media all and (-webkit-min-device-pixel-ratio: 1), all and (min--moz-device-pixel-ratio: 1), all and (-o-min-device-pixel-ratio: 1), all and (min-device-pixel-ratio: 1), all and (min-resolution: 96dpi) {
+    background: transparent url($sprite_path) 0 0 no-repeat;
+  }
+
+  @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 144dpi) {
+    background: transparent url($sprite_2x_path) 0 0 no-repeat;
+    background-size: 242px 242px;
+  }
+
+
+  &-thumbsup { background-position: -0px -0px; }
+  &-thumbsdown { background-position: -22px -0px; }
+  &-angry { background-position: -44px -0px; }
+  &-anguished { background-position: -66px -0px; }
+  &-astonished { background-position: -88px -0px; }
+  &-backhand { background-position: -110px -0px; }
+  &-blush { background-position: -132px -0px; }
+  &-clap { background-position: -154px -0px; }
+  &-cloud { background-position: -176px -0px; }
+  &-cloud-with-rain { background-position: -198px -0px; }
+  &-clown-face { background-position: -220px -0px; }
+  &-cold-sweat { background-position: -0px -22px; }
+  &-confounded { background-position: -22px -22px; }
+  &-confused { background-position: -44px -22px; }
+  &-cowboy { background-position: -66px -22px; }
+  &-cry { background-position: -88px -22px; }
+  &-dark-sunglasses { background-position: -110px -22px; }
+  &-dash { background-position: -132px -22px; }
+  &-disappointed { background-position: -154px -22px; }
+  &-disappointed-relieved { background-position: -176px -22px; }
+  &-disgust { background-position: -198px -22px; }
+  &-dizzy-face { background-position: -220px -22px; }
+  &-drool { background-position: -0px -44px; }
+  &-droplet { background-position: -22px -44px; }
+  &-expressionless { background-position: -44px -44px; }
+  &-eye-roll { background-position: -66px -44px; }
+  &-facepunch { background-position: -88px -44px; }
+  &-fearful { background-position: -110px -44px; }
+  &-fire { background-position: -132px -44px; }
+  &-fist { background-position: -154px -44px; }
+  &-flushed { background-position: -176px -44px; }
+  &-frowning { background-position: -198px -44px; }
+  &-gesundheit { background-position: -220px -44px; }
+  &-good-luck { background-position: -0px -66px; }
+  &-grimacing { background-position: -22px -66px; }
+  &-grin { background-position: -44px -66px; }
+  &-grinning { background-position: -66px -66px; }
+  &-hand { background-position: -88px -66px; }
+  &-handshake { background-position: -110px -66px; }
+  &-heart-eyes { background-position: -132px -66px; }
+  &-hugging { background-position: -154px -66px; }
+  &-hushed { background-position: -176px -66px; }
+  &-imp { background-position: -198px -66px; }
+  &-injured { background-position: -220px -66px; }
+  &-innocent { background-position: -0px -88px; }
+  &-joy { background-position: -22px -88px; }
+  &-kissing { background-position: -44px -88px; }
+  &-kissing-closed-eyes { background-position: -66px -88px; }
+  &-kissing-heart { background-position: -88px -88px; }
+  &-kissing-smiling-eyes { background-position: -110px -88px; }
+  &-laughing { background-position: -132px -88px; }
+  &-left-fist-bump { background-position: -154px -88px; }
+  &-liar { background-position: -176px -88px; }
+  &-mask { background-position: -198px -88px; }
+  &-megafrown { background-position: -220px -88px; }
+  &-middle-finger { background-position: -0px -110px; }
+  &-money-mouth-face { background-position: -22px -110px; }
+  &-muscle { background-position: -44px -110px; }
+  &-nerd-face { background-position: -66px -110px; }
+  &-neutral-face { background-position: -88px -110px; }
+  &-no-mouth { background-position: -110px -110px; }
+  &-ok-hand { background-position: -132px -110px; }
+  &-open-hands { background-position: -154px -110px; }
+  &-open-mouth { background-position: -176px -110px; }
+  &-pensive { background-position: -198px -110px; }
+  &-persevere { background-position: -220px -110px; }
+  &-point-down { background-position: -0px -132px; }
+  &-point-left { background-position: -22px -132px; }
+  &-point-right { background-position: -44px -132px; }
+  &-point-up { background-position: -66px -132px; }
+  &-point-up-2 { background-position: -88px -132px; }
+  &-poop { background-position: -110px -132px; }
+  &-pray { background-position: -132px -132px; }
+  &-rage { background-position: -154px -132px; }
+  &-rainbow { background-position: -176px -132px; }
+  &-raised-hands { background-position: -198px -132px; }
+  &-relaxed { background-position: -220px -132px; }
+  &-relieved { background-position: -0px -154px; }
+  &-right-facing-fist { background-position: -22px -154px; }
+  &-rolling-floor-aughing { background-position: -44px -154px; }
+  &-sarcasm { background-position: -66px -154px; }
+  &-scream { background-position: -88px -154px; }
+  &-shaka { background-position: -110px -154px; }
+  &-sign-horns-hand { background-position: -132px -154px; }
+  &-sleeping { background-position: -154px -154px; }
+  &-sleepy { background-position: -176px -154px; }
+  &-slightly-sad { background-position: -198px -154px; }
+  &-slightly-smiling-face { background-position: -220px -154px; }
+  &-smile { background-position: -0px -176px; }
+  &-smiley { background-position: -22px -176px; }
+  &-smiling-imp { background-position: -44px -176px; }
+  &-smirk { background-position: -66px -176px; }
+  &-snowflake { background-position: -88px -176px; }
+  &-sob { background-position: -110px -176px; }
+  &-splayed-hand { background-position: -132px -176px; }
+  &-spock { background-position: -154px -176px; }
+  &-star { background-position: -176px -176px; }
+  &-stuck-out-tongue { background-position: -198px -176px; }
+  &-stuck-out-tongue-closed-eyes { background-position: -220px -176px; }
+  &-stuck-out-tongue-winking-eye { background-position: -0px -198px; }
+  &-sun-behind-large-cloud { background-position: -22px -198px; }
+  &-sun-small-cloud { background-position: -44px -198px; }
+  &-sunglasses { background-position: -66px -198px; }
+  &-sunny { background-position: -88px -198px; }
+  &-sweat { background-position: -110px -198px; }
+  &-sweat-smile { background-position: -132px -198px; }
+  &-thermometer-face { background-position: -154px -198px; }
+  &-thinking { background-position: -176px -198px; }
+  &-thunder { background-position: -198px -198px; }
+  &-tired-face { background-position: -220px -198px; }
+  &-triumph { background-position: -0px -220px; }
+  &-umbrella { background-position: -22px -220px; }
+  &-unamused { background-position: -44px -220px; }
+  &-v { background-position: -66px -220px; }
+  &-wave { background-position: -88px -220px; }
+  &-weary { background-position: -110px -220px; }
+  &-wink { background-position: -132px -220px; }
+  &-worried { background-position: -154px -220px; }
+  &-writing-hand { background-position: -176px -220px; }
+  &-yum { background-position: -198px -220px; }
+  &-zipper-mouth { background-position: -220px -220px; }
+}
+
