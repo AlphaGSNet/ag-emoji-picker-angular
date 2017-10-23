@@ -33,12 +33,15 @@ export class EmojiPages {
     this.pages = [
       {
         name: 'Page 1',
+        page: 1,
         icons: p1
       }, {
         name: 'Page 2',
+        page: 2,
         icons: p2
       }, {
         name: 'Page 3',
+        page: 3,
         icons: p3
       }
     ]

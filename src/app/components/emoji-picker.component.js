@@ -18,15 +18,18 @@ export const emojiPickerComponent = {
   },
   controllerAs: '$picker',
   controller: class EmojiPickerController {
-    constructor($element, EmojiPages) {
+    constructor($window, $element, EmojiPages) {
       'ngInject';
 
       this.$element = $element;
+      this.$window = $window;
       this.pages = EmojiPages.pages || [];
     }
 
     $onInit() {
-      this.selectedPage = this.pages[0];
+      this.limit = this.pages.length - 1;
+      this.activeIndex = 0;
+      this.selectPage(this.activeIndex);
       this.model.$render = () => this.model.$viewValue || '';
     }
 
@@ -42,8 +45,17 @@ export const emojiPickerComponent = {
       this.triggerOnChange();
     }
 
-    selectPage(page) {
-      this.selectedPage = page;
+    selectPage(index) {
+      this.activeIndex = index;
+      this.selectedPage = this.pages[index];
+    }
+
+    showNext(position){
+      let index = (position === 'up')
+        ? (this.activeIndex + 1) > this.limit ? 0 : this.activeIndex + 1
+        : (this.activeIndex - 1) < 0 ? this.limit : this.activeIndex - 1;
+
+      this.selectPage(index);
     }
 
     triggerOnChange() {

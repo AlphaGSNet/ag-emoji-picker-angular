@@ -1,4 +1,4 @@
-<div class="emoji-picker__container">
+<div class="emoji-picker__container" picker-scroll="$picker.showNext(position)">
   <div class="emoji-picker__icons">
     <i class="emoji emoji-{{ ::emoji | toClassName }}"
        ng-repeat="emoji in $picker.selectedPage.icons"
@@ -9,7 +9,7 @@
     <span class="emoji-picker__pages--item"
           ng-repeat="page in ::$picker.pages"
           ng-class="{'active': page.name === $picker.selectedPage.name}"
-          ng-click="$picker.selectPage(page)">
+          ng-click="$picker.selectPage($index)">
     </span>
   </div>
 </div>

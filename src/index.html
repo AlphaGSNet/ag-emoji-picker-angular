@@ -23,12 +23,9 @@
   <body>
 
   <div class="container" ng-controller="MainController as main">
-
-    <br><br><br><br><br><br><br><br><br>
-    <div class="row">
+    <div class="row" style="margin-top: 150px;">
       <div class="col-xs-6">
-        <!--<span emoji-picker="main.message" placement="right" title="Emoji" recent-limit="12">picker</span>-->
-        <emoji-picker ng-model="main.message" placement="top">picker</emoji-picker>
+        <emoji-picker ng-model="main.message" placement="right">picker</emoji-picker>
       </div>
       <div class="col-xs-6">
         <textarea md-maxlength="150" required ng-model="main.message" columns="1"></textarea>
