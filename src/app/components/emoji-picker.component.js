@@ -1,6 +1,7 @@
 export const emojiPickerComponent = {
   template: `
      <i class="emoji-picker"
+       ng-click="$picker.toggleOpen()"
        uib-popover-template="'app/templates/emoji-popover.html'"
        popover-is-open="$picker.open"
        popover-placement="{{ !$picker.placement && 'left' || $picker.placement }}"
@@ -11,7 +12,7 @@ export const emojiPickerComponent = {
   },
   transclude: true,
   bindings: {
-    open: '<',
+    open: '=',
     placement: '@',
     title: '@',
     onChangeFunc: '&'
@@ -35,7 +36,7 @@ export const emojiPickerComponent = {
 
     append(emoji) {
       let localValue = this.model.$viewValue || '';
-      localValue += ` :${emoji}:`;
+      localValue += `:${emoji}:`;
 
       if (angular.isFunction(String.prototype.trim)) {
         localValue = localValue.trim();

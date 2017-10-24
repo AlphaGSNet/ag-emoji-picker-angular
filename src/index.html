@@ -25,9 +25,12 @@
   <div class="container" ng-controller="MainController as main">
     <div class="row" style="margin-top: 150px;">
       <div class="col-xs-6">
-        <emoji-picker ng-model="main.message" placement="right">picker</emoji-picker>
+        <emoji-picker ng-model="main.message"
+                      open="main.open"
+                      placement="right">picker</emoji-picker>
       </div>
       <div class="col-xs-6">
+        <button class="btn btn-default" ng-click="main.close()">close</button>
         <textarea md-maxlength="150" required ng-model="main.message" columns="1"></textarea>
         {{main.message}}
         <p><strong>Imagify filter</strong>: <span emoji-removable="post.message" ng-bind-html="main.message | imagify"></span></p>
