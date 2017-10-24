@@ -7,6 +7,7 @@ import {imagifyFilter} from './filters/imagify.filter'
 import {toClassName} from './filters/to-class-name.filter';
 import {emojiPickerComponent} from './components/emoji-picker.component';
 import {onScrollDirective} from './directives/on-scroll.directive';
+import {emojiAreaDirective} from './directives/emoji-area.directive';
 
 angular.module('bfEmojiPickerAngular', ['ngSanitize', 'ui.bootstrap'])
   .config(config)
@@ -17,4 +18,5 @@ angular.module('bfEmojiPickerAngular', ['ngSanitize', 'ui.bootstrap'])
   .filter('toClassName', toClassName)
   .component('emojiPicker', emojiPickerComponent)
   .directive('pickerScroll', onScrollDirective)
+  .directive('emojiArea', emojiAreaDirective)
   .controller('MainController', MainController);

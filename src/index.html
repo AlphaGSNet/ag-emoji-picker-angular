@@ -25,17 +25,16 @@
 <div class="container" ng-controller="MainController as main">
   <div class="row" style="margin-top: 150px;">
     <div class="col-xs-6">
-      <emoji-picker open="main.open"
-                    on-insert="main.addEmoji($event)"
-                    placement="right">
+      <emoji-picker open="main.open" placement="right">
         picker
       </emoji-picker>
     </div>
     <div class="col-xs-6">
       <button class="btn btn-default" ng-click="main.close()">close</button>
-      <textarea emoji-insert=""
-           required
-           ng-model="main.message" columns="1"></textarea>
+      <div contenteditable="true" emoji-area="test" class="test" ng-model="main.message"></div>
+      <!--<textarea emoji-insert=""-->
+           <!--required-->
+           <!--ng-model="main.message" columns="1"></textarea>-->
       <p><strong>Imagify filter</strong>: <span ng-bind-html="main.message | imagify"></span></p>
     </div>
   </div>
