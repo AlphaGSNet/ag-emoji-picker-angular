@@ -1,7 +1,19 @@
 export class Utils {
-  constructor() {
+  constructor($rootScope) {
+    'ngInject';
 
+    this.$rootScope = $rootScope;
+    this._INSERT_EMOJI_EVENT = 'INSERT_EMOJI';
   }
+
+  triggerInsertEvent(emoji){
+    this.$rootScope.$emit(this._INSERT_EMOJI_EVENT, emoji);
+  }
+
+  subscribeOnInsert(cb){
+    return this.$rootScope.$on(this._INSERT_EMOJI_EVENT, cb);
+  }
+
   /* eslint-disable */
   debounce(func, wait, immediate) {
     let timeout;

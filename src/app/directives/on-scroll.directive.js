@@ -1,4 +1,4 @@
-export function onScrollDirective($parse, Utils) {
+export function onScrollDirective($parse, bfEmojiPickerUtils) {
   'ngInject';
 
   let directive = {
@@ -6,12 +6,12 @@ export function onScrollDirective($parse, Utils) {
     link: function (scope, element, attrs) {
       let handler = $parse(attrs.pickerScroll);
 
-      let handleWebkitMouseWheel = Utils.debounce((e) => {
+      let handleWebkitMouseWheel = bfEmojiPickerUtils.debounce((e) => {
         let position = e.originalEvent.wheelDelta < 0 ? 'down' : 'up';
         scope.$apply(() => handler(scope, {position: position}));
       }, 100, true);
 
-      let handleFirefoxMouseWheel = Utils.debounce((e) => {
+      let handleFirefoxMouseWheel = bfEmojiPickerUtils.debounce((e) => {
         let position = e.originalEvent.detail > 0 ? 'down' : 'up';
         scope.$apply(() => handler(scope, {position: position}));
       }, 100, true);

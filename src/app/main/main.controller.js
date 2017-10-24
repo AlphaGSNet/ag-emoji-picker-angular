@@ -7,4 +7,8 @@ export class MainController {
   close(){
     this.open = false;
   }
+
+  addEmoji(emoji){
+    this.message += emoji
+  }
 }

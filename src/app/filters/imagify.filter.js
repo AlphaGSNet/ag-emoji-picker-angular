@@ -10,7 +10,8 @@ export function imagifyFilter(EmojiPages) {
       let className = text.replace(/_/g, '-');
       return `<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                    class="emoji emoji-${className}" 
-                   title=":${text}:" alt="${className}">`;
+                   title=":${text}:" 
+                   alt="${className}">`;
     })
   };
 }
