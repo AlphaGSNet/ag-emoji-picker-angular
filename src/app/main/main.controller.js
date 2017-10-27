@@ -1,10 +1,10 @@
 export class MainController {
   constructor(){
     this.message = 'test'
-    this.open = true;
+    this.open = 1;
   }
 
   close(){
-    this.open = false;
+    this.open += 1;
   }
 }
