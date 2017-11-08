@@ -32,10 +32,13 @@
     <div class="col-xs-6">
       <button class="btn btn-default" ng-click="main.close()">close</button>
       <div contenteditable="true" emoji-area="test" class="test" ng-model="main.message"></div>
+
+      <input ng-model="main.message">
+
       <!--<textarea emoji-insert=""-->
            <!--required-->
            <!--ng-model="main.message" columns="1"></textarea>-->
-      <p><strong>Imagify filter</strong>: <span ng-bind-html="main.message | imagify"></span></p>
+      <p><strong>Imagify filter</strong>: <span ng-bind-html="main.message | imagifySingle"></span></p>
     </div>
   </div>
 </div>

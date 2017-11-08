@@ -1,9 +1,21 @@
 export class Utils {
-  constructor($rootScope) {
+  constructor($rootScope, $window) {
     'ngInject';
 
     this.$rootScope = $rootScope;
+    this.$window = $window;
     this._INSERT_EMOJI_EVENT = 'INSERT_EMOJI';
+
+    this.isRetina = this.checkDisplayType();
+  }
+
+  checkDisplayType(){
+    const mediaQuery = "(-webkit-min-device-pixel-ratio: 1.5),\
+            (min--moz-device-pixel-ratio: 1.5),\
+            (-o-min-device-pixel-ratio: 3/2),\
+            (min-resolution: 1.5dppx)";
+
+    return this.$window.devicePixelRatio > 1 || (this.$window.matchMedia && this.$window.matchMedia(mediaQuery).matches);
   }
 
   triggerInsertEvent(emoji){

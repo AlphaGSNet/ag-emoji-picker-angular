@@ -1,6 +1,6 @@
 export class MainController {
   constructor(){
-    this.message = 'test'
+    this.message = ':v:';
     this.open = 1;
   }
 

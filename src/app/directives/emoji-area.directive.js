@@ -86,7 +86,6 @@ export function emojiAreaDirective(bfEmojiPickerUtils, $window, $filter) {
         }
 
         replaceSelection($($filter('imagify')(emoji))[0], inputClassName);
-
       }
 
 
