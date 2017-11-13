@@ -8,7 +8,7 @@ export function imagifySingleFilter(EmojiPages, bfEmojiPickerUtils) {
     if (!input) return '';
 
     return input.replace(regex, (match, text) => {
-      return `<img src="${path}/images/emoji-icons${isRetina ? '@80' : '@40'}/${text}.png"
+      return `<img src="${path}/images/emoji-icons${isRetina ? '@120' : '@60'}/${text}.png"
                    class="emoji-single"
                    title=":${text}:"
                    alt="${text}">`;
