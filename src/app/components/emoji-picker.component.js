@@ -3,6 +3,7 @@ export const emojiPickerComponent = {
      <i class="emoji-picker"
        ng-click="$picker.toggleOpen()"
        uib-popover-template="'app/templates/emoji-popover.html'"
+       ng-class="{opened: $picker.open}"
        popover-is-open="$picker.open"
        popover-placement="{{ !$picker.placement && 'left' || $picker.placement }}"
        popover-title="{{ ::$picker.title }}"><ng-transclude></ng-transclude></i>
