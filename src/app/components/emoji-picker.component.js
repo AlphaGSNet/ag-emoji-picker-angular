@@ -37,7 +37,7 @@ export const emojiPickerComponent = {
     }
 
     $onChanges(changes){
-      if(changes.close && !changes.close.isFirstChange()){
+      if (changes.close && !changes.close.isFirstChange()){
         this.open = false;
       }
     }
